@@ -1,6 +1,5 @@
 # Formula-1-Predictor
 ![alt text](Extras/Header_ReadMe.jpg)
-Here's a suggested GitHub README page for your project "Formula 1 Grand Prix Predictor":
 
 ---
 
@@ -11,9 +10,9 @@ The **Formula 1 Grand Prix Predictor** project utilizes machine learning to pred
 
 ## Features
 - **Random Forest Model**: A supervised machine learning algorithm used to predict race outcomes.
-- **Data Scraping**: Collects historical Formula 1 data using web scraping techniques for feature engineering.
-- **Data Processing**: Uses Pandas to clean, manipulate, and prepare data for analysis.
-- **Model Evaluation**: Evaluates model performance using appropriate metrics such as accuracy, precision, and recall.
+- **Data Scraping**: Collected historical Formula 1 data using web scraping techniques for feature engineering.
+- **Data Processing**: Used Pandas to clean, manipulate, and prepare data for analysis.
+- **Model Evaluation**: Evaluates model performance using appropriate metrics such as accuracy and precision.
 - **Visualizations**: Displays key insights and predictions via data visualizations.
 
 ## Technologies
@@ -27,89 +26,37 @@ The **Formula 1 Grand Prix Predictor** project utilizes machine learning to pred
 
 ### Prerequisites
 - Python 3.7+
-- Install dependencies using the following:
-
-```bash
-pip install -r requirements.txt
-```
 
 ### Steps to run the project:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/Formula-1-Grand-Prix-Predictor.git
-cd Formula-1-Grand-Prix-Predictor
+git clone https://github.com/Adri-ayala/Formula-1-Predictor.git
+cd Formula-1-Predictor
 ```
 
-2. Install the required dependencies:
+1. To scrape historical race data, run the scraper script:
 
 ```bash
-pip install -r requirements.txt
+Formula1_2024_Teams_Scraped.py
 ```
 
-3. To scrape historical race data, run the scraper script:
-
+2. Train the model using the following script and make predictions using the trained model:
 ```bash
-python data_scraper.py
+F1_Predictor.py
 ```
-
-4. After gathering the data, preprocess and clean it with:
-
-```bash
-python data_preprocessor.py
-```
-
-5. Train the model using the following script:
-
-```bash
-python model_trainer.py
-```
-
-6. Finally, make predictions using the trained model:
-
-```bash
-python make_predictions.py
-```
-
-## Example Usage
-
-```python
-from sklearn.ensemble import RandomForestClassifier
-import pandas as pd
-
-# Load preprocessed data
-data = pd.read_csv('race_data.csv')
-
-# Define features and target
-X = data[['qualifying_position', 'driver_skill', 'team_performance', 'weather_conditions']]
-y = data['race_outcome']
-
-# Train model
-model = RandomForestClassifier(n_estimators=100, random_state=42)
-model.fit(X, y)
-
-# Predict race outcome
-predictions = model.predict(X_test)
-print(predictions)
-```
-
 ## Model Evaluation
 The model's performance can be evaluated using standard classification metrics:
 
-- **Accuracy**: Percentage of correctly predicted outcomes.
-- **Precision and Recall**: For evaluating the quality of the predictions.
-- **Confusion Matrix**: To visually assess classification results.
+- **Accuracy**: 96%
+- **Precision and Recall**: 71%.
 
 ## Data Sources
 - [Formula 1 Official Website](https://www.formula1.com/)
-- Additional historical race data may be scraped from various F1-related APIs or websites.
+- [Ergast API](https://ergast.com/mrd/)
 
 ## Contributing
 Contributions are welcome! If you find bugs, want to improve the model, or add new features, feel free to fork the repository and submit a pull request.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to adapt the information to suit your project further!
